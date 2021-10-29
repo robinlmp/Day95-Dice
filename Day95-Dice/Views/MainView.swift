@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  Day95-Dice
-//
-//  Created by Robin Phillips on 28/08/2021.
-//
 
 import SwiftUI
 import CoreData
@@ -29,10 +23,6 @@ class AppSettings: ObservableObject {
     @Published var rollCount = 0
 }
 
-
-
-
-
 struct MainView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
@@ -41,15 +31,8 @@ struct MainView: View {
     
     
     var body: some View {
-        
-        
-        
-        
-        
-        
+
         TabView {
-            
-            
             DiceRollView(appSettings: appSettings)
                 .tabItem {
                     Image(systemName: "dice")
@@ -60,10 +43,7 @@ struct MainView: View {
                     Image(systemName: "list.bullet")
                     Text("Results")
                 }
-            
         }
-        
-        
     }
 }
 
