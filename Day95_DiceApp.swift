@@ -1,10 +1,3 @@
-//
-//  Day95_DiceApp.swift
-//  Day95-Dice
-//
-//  Created by Robin Phillips on 28/08/2021.
-//
-
 import SwiftUI
 
 @main
