@@ -25,8 +25,6 @@ struct DiceRollView: View {
         NavigationView {
             VStack {
                 Form {
-                    
-                    
                     Section() {
                         Picker("Which size?", selection: $appSettings.selectedDice) {
                             ForEach(Dice.allCases, id: \.self) { i in
@@ -42,31 +40,6 @@ struct DiceRollView: View {
                         }
 
                     }
-                    
-                    
-                    
-                    
-//                    Button(appSettings.numberOfDice < 2 ? "Roll die" : "Roll dice") {
-//                        var tempResults = [Int]()
-//                        for i in 0..<appSettings.numberOfDice {
-//                            tempResults.append( Int.random(in: 1...appSettings.selectedDice.rawValue) )
-//                            print("number of dice: \(appSettings.numberOfDice) \nsize of dice: \(appSettings.selectedDice.rawValue)")
-//                            print("temp result \(tempResults[i])")
-//                        }
-//                        print("temp results sum \(tempResults.reduce(0, +))\n")
-//                        appSettings.totals.insert(tempResults.reduce(0, +), at: 0)
-//                        
-//                        
-//                    }
-//                    
-//
-//                    if appSettings.totals.count > 0 {
-//                        Text("You have rolled: \(appSettings.totals[0])")
-//                        
-//                    }
-
-                    
-                    
                 }
                 .animation(.default)
                 
@@ -77,13 +50,7 @@ struct DiceRollView: View {
                             .frame(width: geo.size.width * 0.6, height: geo.size.width * 0.6, alignment: .center)
                             .position(x: geo.size.width / 2, y: geo.size.height / 2)
                         
-//                        RoundedRectangle(cornerRadius: 30)
-//                            .stroke(colours[Int.random(in: 0..<colours.count-1)], lineWidth: 4)
-//                            .frame(width: geo.size.width * 0.6, height: geo.size.width * 0.6, alignment: .center)
-//                            .position(x: geo.size.width / 2, y: geo.size.height / 2)
-                        
                         if diceLabelNum > 0 {
-//                            Text("\(appSettings.totals[0])")
                             Text("\(diceLabelNum)")
                                 .font(.system(size: geo.size.height / 3))
                                 .bold()
@@ -96,9 +63,6 @@ struct DiceRollView: View {
                                 .foregroundColor(.white)
                                 .position(x: geo.size.width / 2, y: geo.size.height / 2)
                         }
-                        
-                        
-                        
                     }
                     .rotation3DEffect(.degrees(rotationAmount), axis: (x: 0, y: 1, z: 0))
                     
@@ -127,9 +91,6 @@ struct DiceRollView: View {
                     .allowsHitTesting(hitTestingOn)
                     
                 }
-                
-                
-                
             }
             .navigationTitle(Text("Dice!"))
         }
@@ -161,7 +122,6 @@ struct DiceRollView: View {
         appSettings.totals.insert(tempTotal, at: 0)
         appSettings.results.insert("Roll \(appSettings.rollCount): \(tempTotal)", at: 0)
         diceLabelNum = tempTotal
-        
         addItem(diceRollResult: tempTotal)
     }
     
@@ -237,8 +197,6 @@ struct DiceRollView: View {
                 viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
@@ -246,11 +204,3 @@ struct DiceRollView: View {
     }
     
 }
-
-//struct DiceRollView_Previews: PreviewProvider {
-//    static var dice = Dice.dice6
-//
-//    static var previews: some View {
-//        DiceRollView(dice: dice.rawValue)
-//    }
-//}
