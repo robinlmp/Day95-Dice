@@ -1,10 +1,3 @@
-//
-//  ResultsView.swift
-//  ResultsView
-//
-//  Created by Robin Phillips on 28/08/2021.
-//
-
 import SwiftUI
 import CoreData
 
